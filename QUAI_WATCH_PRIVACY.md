@@ -5,34 +5,26 @@ Effective: 29 July 2026
 Quai Watch is a standalone Wear OS transit app for the Paris region. This
 policy explains the data used by the app.
 
-## Location
+## Favorites and location
 
-Quai asks only for approximate foreground location, and only after the wearer
-chooses to find nearby stations. When permission is already granted, Quai
-refreshes the location when the app returns to the foreground so it does not
-keep presenting a previous place.
+Quai stores only the stable station identifiers that the wearer explicitly
+adds as favorites. Favorites remain on the watch and are not sent to the Quai
+API or synchronized to a phone.
 
-The approximate coordinates are sent over HTTPS to the Quai API solely to
-calculate nearby stations. The service processes the coordinates in memory
-against its transit-topology snapshot and does not retain them after responding.
-Its application logs exclude URL query parameters. Location is never used in
-the background, for advertising, for analytics, or to build a profile.
-
-Location permission is optional. The complete line catalog and search remain
-available when permission is denied.
+Quai does not request, access, infer, transmit, or store the watch or connected
+phone's location.
 
 ## Data stored on the watch
 
-Quai caches nearby-station results and departure boards in the app's private
-storage so useful transit information remains visible during a temporary
-network failure. It does not store the location fix itself. Clear Quai's app
-data or uninstall the app to remove this cache.
+Quai stores favorites and caches departure boards in the app's private storage
+so useful transit information remains visible during a temporary network
+failure. Clear Quai's app data or uninstall the app to remove them.
 
 ## Accounts, advertising, and tracking
 
 Quai has no user accounts, advertising, analytics, tracking, or crash-reporting
-SDK. It does not sell personal data or share location with independent third
-parties. The hosting provider may process ordinary connection metadata, such as
+SDK. It does not sell personal data. The hosting provider may process ordinary
+connection metadata, such as
 an IP address, to deliver and protect the service.
 
 ## Contact and changes
